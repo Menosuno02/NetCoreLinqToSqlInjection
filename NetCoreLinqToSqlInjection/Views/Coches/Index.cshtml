@@ -1,0 +1,19 @@
+﻿@model Coche
+
+<h1>Coches Dependency Injection</h1>
+
+<h2>@Model.Marca @Model.Modelo</h2>
+
+<img src="~/images/@Model.Imagen" width="250px" height="200px" class="mb-3" />
+
+<h4>Velocidad actual: <span class="text-success">@Model.Velocidad</span> km/h</h4>
+<h4>Velocidad máxima: <span class="text-danger">@Model.VelocidadMaxima</span> km/h</h4>
+
+<form method="post">
+    <button name="accion" value="acelerar" class="btn btn-outline-success">
+        Acelerar
+    </button>
+    <button name="accion" value="freanr" class="btn btn-outline-danger">
+        Frenar
+    </button>
+</form>
