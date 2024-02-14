@@ -10,7 +10,7 @@ builder.Services.AddControllersWithViews();
 // builder.Services.AddSingleton<Coche>();
 
 // builder.Services.AddSingleton<ICoche, Deportivo>();
-builder.Services.AddSingleton<IRepositoryDoctores, RepositoryDoctoresSQLServer>();
+builder.Services.AddTransient<IRepositoryDoctores, RepositoryDoctoresSQLServer>();
 
 Coche car = new Coche();
 car.Marca = "Porsche";
