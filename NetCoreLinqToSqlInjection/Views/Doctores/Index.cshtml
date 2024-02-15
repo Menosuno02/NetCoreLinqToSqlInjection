@@ -1,7 +1,18 @@
 ﻿@model List<Doctor>
 
 <h1>Doctores </h1>
-<a asp-controller="Doctores" asp-action="Create" class="btn btn-success w-100 my-3">Crear doctor</a>
+<div class="row">
+    <div class="col-6">
+        <a asp-controller="Doctores" asp-action="Create"
+           class="btn btn-success w-100 my-3">Crear doctor</a>
+
+    </div>
+    <div class="col-6">
+        <a asp-controller="Doctores" asp-action="DoctoresEspecialidad"
+           class="btn btn-info w-100 my-3">Buscar por especialidad</a>
+
+    </div>
+</div>
 <table class="table table-borderless">
     <thead>
         <tr>
@@ -9,6 +20,7 @@
             <th>Especialidad</th>
             <th>Salario</th>
             <th>Hospital</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +31,14 @@
                 <td>@doctor.Especialidad</td>
                 <td>@doctor.Salario</td>
                 <td>@doctor.IdHospital</td>
+                <td>
+                    <a asp-controller="Doctores" asp-action="Update"
+                       asp-route-iddoctor="@doctor.IdDoctor"
+                       class="btn btn-primary btn-sm">Update</a>
+                    <a asp-controller="Doctores" asp-action="Delete"
+                       asp-route-iddoctor="@doctor.IdDoctor"
+                       class="btn btn-danger btn-sm">Delete</a>
+                </td>
             </tr>
         }
     </tbody>
